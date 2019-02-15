@@ -64,12 +64,15 @@ def turn
   klass = current_player.class
   array_win = winning
   array_block = block
-  win_index = 0
   if winning !=false  && (klass == Players::Computer) 
-    array_win.each_with_index do |element, index|
-      if array[element] == " "
-        win_index = index
-      end 
+    if array[array_win[0]]==" "
+      index = 0
+    end
+    if array[array_win[1]]==" "
+      index = 1  
+    end
+    if array[array_win[2]]==" "
+      index = 2
     end
     input = array_win[win_index] + 1
     input = input.to_s
