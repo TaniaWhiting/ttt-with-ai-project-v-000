@@ -65,16 +65,12 @@ def turn
   array_win = winning
   array_block = block
   if winning !=false  && (klass == Players::Computer) 
-    if array[array_win[0]]==" "
-      index = 0
+    array_win.each_with_index do |element, index|
+      if array[element] == " "
+        win_index = index
+      end 
     end
-    if array[array_win[1]]==" "
-      index = 1  
-    end
-    if array[array_win[2]]==" "
-      index = 2
-    end
-    input = array_win[index] + 1
+    input = array_win[win_index] + 1
     input = input.to_s
     board.display
     puts "#{current_player.token}, select a square by entering 1-9 (1 for top left and 9 for bottom right):"
