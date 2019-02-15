@@ -64,6 +64,7 @@ def turn
   klass = current_player.class
   array_win = winning
   array_block = block
+  win_index = 0
   if winning !=false  && (klass == Players::Computer) 
     array_win.each_with_index do |element, index|
       if array[element] == " "
